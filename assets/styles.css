@@ -149,7 +149,7 @@ section { padding-block: clamp(64px, 9vw, 120px); }
 }
 .hero .wrap-text { position: relative; z-index: 1; }
 .hero h1 { margin-bottom: 0.35em; }
-.hero p { color: var(--ink-soft); margin-bottom: 0; }
+.hero p { color: var(--ink-soft); margin-bottom: 0; font-size: 26px; line-height: 1.5; }
 
 /* The colour blob behind the hero.
    Two blurred conic-gradient circles, matching the original. */
