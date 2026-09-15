@@ -401,3 +401,31 @@ section { padding-block: clamp(64px, 9vw, 120px); }
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
+
+/* ---------- Cookie banner ----------
+   Deliberately a slim, non-modal bar, not a full-screen overlay: no
+   backdrop, no focus trap, doesn't block interaction with the rest of the
+   page, and never grabs focus on load. */
+.cookie-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 100;
+  display: flex; flex-wrap: wrap; gap: 16px;
+  align-items: center; justify-content: center;
+  padding: 16px 24px;
+  background: var(--bg); border-top: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p {
+  margin: 0; max-width: 640px;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  color: var(--ink);
+}
+.cookie-banner-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.cookie-banner .btn {
+  padding: 10px 20px; font-size: 15px; box-shadow: none;
+}
+.cookie-banner .btn-outline {
+  background: transparent; color: var(--ink); border: 1px solid var(--border);
+}
+.cookie-banner .btn-outline::before { background: var(--ink); }
+
