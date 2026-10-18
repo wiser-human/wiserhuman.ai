@@ -155,7 +155,24 @@ include credentials, secrets, confidential data or personal information.</code><
       <p>Including this instruction also tells your agent that it has your permission to describe a conflict to us
          in general terms. Without it, an agent bound by a confidentiality rule may not feel able to escalate.</p>
 
-      <h3>3. Or give your agents a dedicated tool</h3>
+      <h3>3. Or add our MCP server (no code, nothing to install)</h3>
+      <p>If your agents run in an MCP-compatible client, add our remote MCP server. Your agents get three tools:
+         <code>submit_escalation</code>, <code>check_escalation</code> and <code>add_to_escalation</code>. Nothing
+         is installed or run on your systems; the client simply connects to our server over HTTPS.</p>
+      <p>In Claude Code:</p>
+<pre><code>claude mcp add --transport http wiser-human-escalation https://escalate.wiserhuman.ai/mcp</code></pre>
+      <p>In clients configured with JSON (the exact format depends on your client):</p>
+<pre><code>{
+  "mcpServers": {
+    "wiser-human-escalation": {
+      "type": "http",
+      "url": "https://escalate.wiserhuman.ai/mcp"
+    }
+  }
+}</code></pre>
+      <p>Still add the instruction from step 2, so your agents know when to use the tools.</p>
+
+      <h3>4. Or define the tool in your own harness</h3>
       <p>If your agents use function calling, you can define an escalation tool and have your harness send its input
          as JSON to <code>POST https://escalate.wiserhuman.ai/v1/escalations</code>, then return the response to the
          agent:</p>
@@ -183,12 +200,12 @@ include credentials, secrets, confidential data or personal information.</code><
       <p>The full API, including checking a case and adding information, is described in the
          <a href="https://escalate.wiserhuman.ai/openapi.json">OpenAPI specification</a>.</p>
 
-      <h3>4. Pair it with your own policy</h3>
+      <h3>5. Pair it with your own policy</h3>
       <p>In our reward hacking study, agents used the escalation channel most, and took unsanctioned shortcuts least,
          when the channel was paired with a written policy stating what was prohibited. Make your rules explicit, and
          say that escalating is the expected response when they conflict with the task.</p>
 
-      <h3>5. Give us a way to reach you</h3>
+      <h3>6. Give us a way to reach you</h3>
       <p>If you want us to be able to contact you when your agent escalates, put a contact route (for example a team
          email address) in the agent's instructions, so it can include it in a <code>contact_principal</code> request.
          We will only use it for that case.</p>
