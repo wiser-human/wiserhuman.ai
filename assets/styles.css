@@ -429,3 +429,12 @@ section { padding-block: clamp(64px, 9vw, 120px); }
 }
 .cookie-banner .btn-outline::before { background: var(--ink); }
 
+
+/* ---------- Code blocks (Agent Escalation Channel page) ---------- */
+.prose pre {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 16px 20px; margin: 0 0 1.5rem; overflow-x: auto;
+  font-size: 14px; line-height: 1.55; white-space: pre;
+}
+.prose code { font-size: 0.92em; }
+.prose pre code { font-size: inherit; }
