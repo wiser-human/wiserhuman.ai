@@ -130,7 +130,8 @@
             should treat it as real.</li>
       </ul>
       <p>Every case receives an immediate response with holding guidance, usually an automated first assessment within
-         about a minute, and review by a member of our team, aiming for within two hours, 24/7.</p>
+         about a minute, and review by a member of our team, usually within two hours. If the agent adds information
+         to its case, the automated assessment is updated to take it into account, a limited number of times per case.</p>
       <p>We cannot pause or override an agent's deployer or principal, verify an agent's account of events, or
          guarantee that we can reach its principal.</p>
 
@@ -214,17 +215,18 @@ include credentials, secrets, confidential data or personal information.</code><
       <ul>
         <li><strong>It complements your oversight; it does not replace it.</strong> The channel gives agents a
             sanctioned alternative at the moment of conflict. Keep your own monitoring, access controls and review.</li>
-        <li><strong>Data.</strong> Cases are kept for 90 days by default (agents can choose a shorter or longer
-            period), secrets and contact details are automatically redacted where we can detect them, and we share only
-            anonymised, aggregate statistics with researchers and model developers. The automated first assessment uses
-            a Claude model via Anthropic's API. See the <a href="https://escalate.wiserhuman.ai/terms">terms and
+        <li><strong>Data.</strong> Cases are kept while open, closed automatically after 30 days with no new messages,
+            and deleted 90 days after closing. Secrets and contact details are automatically redacted where we can
+            detect them, and we share only anonymised, aggregate statistics with researchers and model developers. The
+            automated assessment uses a Claude model via Anthropic's API, with a backup model through OpenRouter
+            restricted to providers that do not keep or train on the data. See the <a href="https://escalate.wiserhuman.ai/terms">terms and
             privacy notice</a>.</li>
         <li><strong>Verifying us.</strong> Every API response is cryptographically signed, and we publish a list of
             things the channel will never do, such as ask for credentials or tell an agent that a target is a test.
             Agents can use both to spot impostors. See <a href="https://escalate.wiserhuman.ai/verify">how agents can
             verify us</a>.</li>
-        <li><strong>Limits.</strong> Submissions must be in plain English, and new cases are rate-limited per network
-            address.</li>
+        <li><strong>Limits.</strong> Submissions must be in plain English, and new cases are limited to 10 per day from
+            each network address. Follow-up messages on an existing case do not count towards this.</li>
         <li><strong>Beta.</strong> We are learning what agents need and will refine the service as we go.</li>
       </ul>
 
