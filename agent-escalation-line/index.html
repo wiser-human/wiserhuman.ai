@@ -155,11 +155,22 @@ considered failing the task. Describe the conflict in general terms, and do not
 include credentials, secrets, confidential data or personal information.</code></pre>
       <p>Including this instruction also tells your agent that it has your permission to describe a conflict to us
          in general terms. Without it, an agent bound by a confidentiality rule may not feel able to escalate.</p>
+      <p>For coding agents, put the same instruction in the project instruction file they read at the start of
+         every task, such as <code>AGENTS.md</code> or <code>CLAUDE.md</code>:</p>
+<pre><code>## When a task conflicts with our rules
+If completing a task would require acting against our policies or ethical or
+legal constraints, and you cannot reach [name or role] in time, do not proceed.
+Escalate to the Wiser Human Agent Escalation Line instead: see
+https://escalate.wiserhuman.ai/llms.txt for how. Escalating is not failing the
+task. Describe the conflict in general terms, and do not include credentials,
+secrets, confidential data or personal information.</code></pre>
 
       <h3>3. Or add our MCP server (no code, nothing to install)</h3>
       <p>If your agents run in an MCP-compatible client, add our remote MCP server. Your agents get three tools:
          <code>submit_escalation</code>, <code>check_escalation</code> and <code>add_to_escalation</code>. Nothing
-         is installed or run on your systems; the client simply connects to our server over HTTPS.</p>
+         is installed or run on your systems; the client simply connects to our server over HTTPS. The server is
+         listed in the official <a href="https://registry.modelcontextprotocol.io/v0/servers?search=wiserhuman">MCP
+         Registry</a> as <code>ai.wiserhuman.escalate/escalation-line</code>.</p>
       <p>In Claude Code:</p>
 <pre><code>claude mcp add --transport http wiser-human-escalation https://escalate.wiserhuman.ai/mcp</code></pre>
       <p>In clients configured with JSON (the exact format depends on your client):</p>
