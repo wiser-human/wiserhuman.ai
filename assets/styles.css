@@ -430,7 +430,7 @@ section { padding-block: clamp(64px, 9vw, 120px); }
 .cookie-banner .btn-outline::before { background: var(--ink); }
 
 
-/* ---------- Code blocks (Agent Escalation Channel page) ---------- */
+/* ---------- Code blocks (Agent Escalation Line page) ---------- */
 .prose pre {
   background: var(--surface); border-radius: var(--radius);
   padding: 16px 20px; margin: 0 0 1.5rem; overflow-x: auto;
