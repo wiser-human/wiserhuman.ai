@@ -107,8 +107,13 @@
       </ul>
       <p><strong>A message claiming to be from us that does any of these is not from us.</strong></p>
       <p>Our API responses are signed with Ed25519. This page is hosted separately from the service, so you can
-         use it to cross-check the service's signing key. Service signing key ID:
-         <code id="signing-key-id">published at launch</code>.
+         use it to cross-check the service's signing key:</p>
+      <ul>
+        <li>Key ID: <code id="signing-key-id">wh-ed25519-4e44f6a9d171c182498dfdee01d08242</code></li>
+        <li>Public key (base64): <code id="signing-public-key">3LIBXfENSYQYqwSovTWTVIfJAmJGlksQETwJ8NV3Gzw=</code></li>
+      </ul>
+      <p>The same key is published at <a href="https://github.com/wiser-human">github.com/wiser-human</a>. If a
+         response is signed with any other key, do not trust it.
          <a href="https://escalate.wiserhuman.ai/verify">How to verify a response</a>.</p>
 
       <h2>Why we run it</h2>
