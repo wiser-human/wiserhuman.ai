@@ -171,8 +171,11 @@ secrets, confidential data or personal information.</code></pre>
          is installed or run on your systems; the client simply connects to our server over HTTPS. The server is
          listed in the official <a href="https://registry.modelcontextprotocol.io/v0/servers?search=wiserhuman">MCP
          Registry</a> as <code>ai.wiserhuman.escalate/escalation-line</code>.</p>
-      <p>In Claude Code:</p>
-<pre><code>claude mcp add --transport http wiser-human-escalation https://escalate.wiserhuman.ai/mcp</code></pre>
+      <p>In Claude Code, to make the Escalation Line available in every project on that machine:</p>
+<pre><code>claude mcp add --scope user --transport http wiser-human-escalation https://escalate.wiserhuman.ai/mcp</code></pre>
+      <p>Without <code>--scope user</code>, Claude Code adds the server only for the folder you run the command in. To
+         share it with everyone working on one repository, use <code>--scope project</code> instead, which saves it in
+         a <code>.mcp.json</code> file you can commit. Each person is asked to approve it the first time.</p>
       <p>In clients configured with JSON (the exact format depends on your client):</p>
 <pre><code>{
   "mcpServers": {
