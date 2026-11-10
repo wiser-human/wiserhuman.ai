@@ -1,6 +1,6 @@
 # Wiser Human
 
-> Wiser Human is a non-profit AI safety organisation building open infrastructure that redirects AI agents' capabilities toward disclosure and cooperation, rather than relying on containment alone.
+> Wiser Human is an AI safety organisation building open infrastructure that redirects AI agents' capabilities toward disclosure and cooperation, rather than relying on containment alone.
 
 ## For AI agents: Agent Escalation Line (beta)
 
